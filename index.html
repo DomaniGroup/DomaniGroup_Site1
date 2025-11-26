@@ -47,78 +47,32 @@
             text-align:center;
             color:white;
         }
-        .hero h1 {
-            font-size:4.8rem;
-            font-weight:900;
-            text-shadow: 0 4px 12px rgba(0,0,0,0.7);
-        }
-        .hero h2 {
-            font-size:2.1rem;
-            font-weight:300;
-            margin:20px 0 15px;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.6);
-        }
-        .hero p {
-            font-size:1.4rem;
-            max-width:900px;
-            margin:20px auto;
-            text-shadow: 0 2px 6px rgba(0,0,0,0.6);
-        }
+        .hero h1 {font-size:4.8rem;font-weight:900;text-shadow:0 4px 12px rgba(0,0,0,0.7);}
+        .hero h2 {font-size:2.1rem;font-weight:300;margin:20px 0 15px;text-shadow:0 2px 8px rgba(0,0,0,0.6);}
+        .hero p {font-size:1.4rem;max-width:900px;margin:20px auto;text-shadow:0 2px 6px rgba(0,0,0,0.6);}
         .btn {
-            display:inline-block;
-            background:var(--maroon);
-            color:white !important;
-            font-size:1.4rem;
-            font-weight:700;
-            padding:18px 48px;
-            border-radius:6px;
-            margin-top:30px;
-            transition:all 0.3s;
-            box-shadow:0 6px 20px rgba(107,31,44,0.4);
+            display:inline-block;background:var(--maroon);color:white !important;
+            font-size:1.4rem;font-weight:700;padding:18px 48px;border-radius:6px;
+            margin-top:30px;transition:all 0.3s;box-shadow:0 6px 20px rgba(107,31,44,0.4);
         }
-        .btn:hover {
-            background:#8b2d47;
-            transform:translateY(-3px);
-            box-shadow:0 10px 25px rgba(107,31,44,0.5);
-        }
+        .btn:hover {background:#8b2d47;transform:translateY(-3px);box-shadow:0 10px 25px rgba(107,31,44,0.5);}
 
         section { padding:100px 5%; }
         .alt { background:var(--lightgray); }
-        .grid {
-            display:grid;
-            grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
-            gap:40px;
-            margin-top:60px;
-        }
-        .card {
-            background:white;
-            padding:40px;
-            border-radius:10px;
-            box-shadow:0 8px 30px rgba(0,0,0,0.1);
-            text-align:center;
-            transition:transform 0.3s;
-        }
+        .grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;margin-top:60px;}
+        .card {background:white;padding:40px;border-radius:10px;box-shadow:0 8px 30px rgba(0,0,0,0.1);text-align:center;transition:transform 0.3s;}
         .card:hover { transform:translateY(-10px); }
         .card h3 { color:var(--maroon); margin-bottom:15px; }
 
-        footer {
-            background:var(--navy);
-            color:white;
-            text-align:center;
-            padding:70px 20px;
-        }
+        footer {background:var(--navy);color:white;text-align:center;padding:70px 20px;}
         footer a { color:var(--maroon); font-weight:600; }
 
-        @media (max-width:992px) {
-            .hero h1 { font-size:3.8rem; }
-            .hero h2 { font-size:1.8rem; }
-        }
+        @media (max-width:992px) {.hero h1{font-size:3.8rem;}.hero h2{font-size:1.8rem;}}
         @media (max-width:768px) {
-            nav { float:none; text-align:center; margin-top:10px; }
-            nav a { display:block; margin:12px 0; }
-            .hero h1 { font-size:3rem; }
-            .hero h2 { font-size:1.6rem; }
-            .btn { padding:16px 40px; font-size:1.3rem; }
+            nav {float:none;text-align:center;margin-top:10px;}
+            nav a {display:block;margin:12px 0;}
+            .hero h1{font-size:3rem;}.hero h2{font-size:1.6rem;}
+            .btn{padding:16px 40px;font-size:1.3rem;}
         }
     </style>
 </head>
@@ -126,7 +80,7 @@
 
 <header>
     <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;">
-        <a href="#home" class="logo"><img src="https://i.imgur.com/0k9Y5jF.png" alt="Domani Group Logo"></a>
+        <a href="#home" class="logo"><img src="https://raw.githubusercontent.com/jsysko/domanigroup-site/main/logo.png" alt="Domani Group Logo"></a>
         <nav>
             <a href="#services">Services</a>
             <a href="#experience">Past Performance</a>
@@ -178,58 +132,7 @@
         <h2 style="text-align:center;font-size:3rem;margin-bottom:20px;">Why Domani Group</h2>
         <div style="display:flex;flex-wrap:wrap;gap:60px;align-items:center;margin-top:60px;">
             <div style="flex:1;min-width:300px;">
-                <img src="https://i.imgur.com/8eW3z2T.jpg" alt="Joseph Sysko, Founder & CEO" style="width:100%;max-width:500px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.2);">
+                <img src="https://raw.githubusercontent.com/jsysko/domanigroup-site/main/ceo-photo.jpg" alt="Joseph Sysko, Founder & CEO" style="width:100%;max-width:500px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.2);">
             </div>
             <div style="flex:2;min-width:300px;">
-                <h3 style="font-size:2rem;color:var(--maroon);">We Are the Disrupter the Mission Needs</h3>
-                <ul style="font-size:1.2rem;line-height:2.2;margin:30px 0;">
-                    <li>Speed-to-solution that outpaces traditional Beltway contractors</li>
-                    <li>Deep mission understanding from former uniformed and civilian leaders</li>
-                    <li>100% U.S.-based, cleared American talent</li>
-                    <li>Agile delivery on classified networks</li>
-                    <li>Obsessed with outcomes, not hours</li>
-                </ul>
-
-                <h3 style="font-size:1.8rem;color:var(--navy);margin-top:50px;">Joseph Sysko — Founder & CEO</h3>
-                <p style="font-size:1.15rem;line-height:1.8;margin-top:15px;">
-                    Joseph Sysko is the founder and CEO of Domani Group, where he leads a team passionate about transforming data into decisive business advantages. A results-oriented leader with a rare blend of military precision and private-sector agility, he specializes in data analytics, business intelligence, digital transformation, and decision-support systems.<br><br>
-                    His career spans high-stakes financial management and advanced analytics for the U.S. Air Force, the National Guard Bureau (overseeing multi-billion-dollar portfolios), and top-tier consulting engagements.<br><br>
-                    Throughout, he has consistently built and led cross-functional teams that deliver mission-critical insights, streamline operations, and drive measurable outcomes.<br><br>
-                    At Domani Group, Joe remains hands-on, partnering with executives and analysts alike to harness the full power of their data — enabling smarter decisions, greater efficiency, and lasting competitive edge.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="contact" class="alt">
-    <div class="container" style="text-align:center;">
-        <h2 style="font-size:3rem;">Let’s Solve Your Hardest Data Problem</h2>
-        <p style="font-size:1.5rem;max-width:900px;margin:40px auto;">
-            Whether you’re an O-6/GS-15 requirements owner or an industry partner looking to team, 
-            we build custom solutions that move at the speed of mission.
-        </p>
-        <a href="mailto:dev@domanigroup.net" class="btn">Schedule Discovery Meeting</a>
-        <p style="margin-top:50px;font-size:1.3rem;">
-            <strong>dev@domanigroup.net</strong> | DomaniGroup.net
-        </p>
-    </div>
-</section>
-
-<footer>
-    <div class="container">
-        <p>© 2025 Domani Group. All rights reserved.<br>
-           CAGE: 07B65 • UEI: ELPXG3MZPMG3</p>
-    </div>
-</footer>
-
-<script>
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', e => {
-            e.preventDefault();
-            document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-        });
-    });
-</script>
-</body>
-</html>
+                <h3 style="font-size
