@@ -1,113 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Domani Group | Accelerating Mission Insight</title>
-    <meta name="description" content="Domani Group delivers mission-focused data engineering, AI/ML, predictive analytics, and decision-ready dashboards to the U.S. Federal Government and DoD.">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <style>
-        :root{--navy:#0A1F3D;--maroon:#6B1F2C;--lightgray:#f8f9fa;--white:#ffffff}
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Roboto',sans-serif;color:#333;line-height:1.6;overflow-x:hidden}
-        img{max-width:100%;display:block}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Domani Group | Accelerating Mission Insight</title>
+<meta name="description" content="Domani Group delivers mission-focused data engineering, AI/ML, predictive analytics, and decision-ready dashboards to the U.S. Federal Government and DoD.">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0A1F3D;--maroon:#6B1F2C;--lightgray:#f8f9fa;--white:#ffffff}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Roboto',sans-serif;color:#333;line-height:1.6;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
 
-        header{background:var(--navy);padding:12px 0;position:fixed;width:100%;top:0;z-index:1000;box-shadow:0 0 4px 20px rgba(0,0,0,.2)}
-        .container{max-width:1200px;margin:auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;position:relative}
-        .logo img{height:56px;transition:.3s}
-        .logo img:hover{transform:scale(1.05)}
+header{background:var(--navy);padding:14px 0;position:fixed;top:0;width:100%;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,.2)}
+.container{max-width:1200px;margin:auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;position:relative}
+.logo img{height:56px}
 
-        .nav-links a{color:white;margin-left:32px;font-weight:500;font-size:1.1rem;text-decoration:none}
-        .nav-links a:hover{color:var(--maroon)}
+.nav-links a{color:white;margin-left:32px;font-weight:500;font-size:1.1rem;text-decoration:none}
+.nav-links a:hover{color:var(--maroon)}
 
-        .hamburger{display:none;cursor:pointer}
-        .hamburger span{display:block;width:28px;height:3px;background:white;margin:6px 0;transition:.4s;border-radius:3px}
+.hamburger{display:none;cursor:pointer}
+.hamburger span{display:block;width:28px;height:3px;background:white;margin:6px 0;transition:.4s;border-radius:3px}
 
-        .mobile-menu{
-            position:absolute;
-            top:100%;            /* sits exactly under the header */
-            left:0;
-            width:100%;
-            background:var(--navy);
-            box-shadow:0 10px 20px rgba(0,0,0,.3);
-            display:none;
-        }
-        .mobile-menu.active{display:block}
-        .mobile-menu a{display:block;color:white;padding:18px 0;font-size:1.2rem;text-decoration:none}
-        .mobile-menu a:hover{background:var(--maroon)}
+.mobile-menu{
+    position:absolute;
+    top:100%; left:0; width:100%;
+    background:var(--navy);
+    box-shadow:0 10px 20px rgba(0,0,0,.3);
+    display:none;
+}
+.mobile-menu.active{display:block}
+.mobile-menu a{display:block;color:white;padding:18px 0;font-size:1.2rem;text-decoration:none}
+.mobile-menu a:hover{background:var(--maroon)}
 
-        .hero{
-            background:linear-gradient(rgba(10,31,61,.90),rgba(10,31,61,.94)),
-                       url('https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover;
-            height:100vh;min-height:680px;display:flex;align-items:center;justify-content:center;text-align:center;color:white;padding-top:80px
-        }
-        .hero h1,.hero h2,.hero p{color:white}
-        .hero h1{font-size:5.2rem;font-weight:900;text-shadow:0 5px 20px rgba(0,0,0,.8)}
-        .hero h2{font-size:2.4rem;font-weight:300;text-shadow:0 3px 12px rgba(0,0,0,.7);margin:20px 0}
-        .hero p{font-size:1.5rem;max-width:900px;margin:20px auto}
-        .btn{display:inline-block;background:var(--maroon);color:white!important;font-size:1.5rem;font-weight:700;padding:20px 55px;border-radius:6px;margin-top:40px;box-shadow:0 8px 25px rgba(107,31,44,.5);text-decoration:none}
-        .btn:hover{background:#8b2d47;transform:translateY(-4px)}
+.hero{
+    background:linear-gradient(rgba(10,31,61,.90),rgba(10,31,61,.94)),url('https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover;
+    height:100vh;min-height:680px;display:flex;align-items:center;justify-content:center;text-align:center;color:white;padding-top:80px
+}
+.hero h1,.hero h2,.hero p{color:white}
+.hero h1{font-size:5rem;font-weight:900;text-shadow:0 5px 20px rgba(0,0,0,.8)}
+.hero h2{font-size:2.3rem;font-weight:300;text-shadow:0 3px 12px rgba(0,0,0,.7);margin:20px 0}
+.hero p{font-size:1.5rem;max-width:900px;margin:20px auto}
+.btn{display:inline-block;background:var(--maroon);color:white;font-size:1.5rem;font-weight:700;padding:20px 55px;border-radius:6px;margin-top:40px;text-decoration:none;box-shadow:0 8px 25px rgba(107,31,44,.5)}
+.btn:hover{background:#8b2d47;transform:translateY(-4px)}
 
-        section{padding:110px 5%}
-        .alt{background:var(--lightgray)}
-        .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;margin-top:60px}
-        .card{background:white;padding:40px;border-radius:12px;box-shadow:0 10px 35px rgba(0,0,0,.1);text-align:center;transition:.3s}
-        .card:hover{transform:translateY(-12px)}
-        .card h3{color:var(--maroon);font-size:1.6rem;margin-bottom:15px}
+section{padding:110px 5%}
+.alt{background:var(--lightgray)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;margin-top:60px}
+.card{background:white;padding:40px;border-radius:12px;box-shadow:0 10px 35px rgba(0,0,0,.1);text-align:center;transition:.3s}
+.card:hover{transform:translateY(-12px)}
+.card h3{color:var(--maroon);font-size:1.6rem;margin-bottom:15px}
 
-        footer{background:var(--navy);color:white;text-align:center;padding:70px 20px}
-        footer a{color:var(--maroon);font-weight:600}
+footer{background:var(--navy);color:white;text-align:center;padding:70px 20px}
+footer a{color:var(--maroon);font-weight:600}
 
-        @media(max-width:900px){
-            .hamburger{display:block}
-            .nav-links{display:none}
-        }
-        @media(max-width:768px){
-            .hero h1{font-size:3.8rem}
-            .hero h2{font-size:1.9rem}
-            .hero{padding-top:100px}
-        }
-    </style>
+@media(max-width:900px){
+    .hamburger{display:block}
+    .nav-links{display:none}
+}
+@media(max-width:768px){
+    .hero h1{font-size:3.8rem}
+    .hero h2{font-size:1.9rem}
+    .hero{padding-top:100px}
+}
+</style>
 </head>
 <body>
 
 <header>
-    <div class="container">
-        <a href="#home" class="logo">
-            <img src="https://raw.githubusercontent.com/DomaniGroup/domanigroup-site/main/logo.png" alt="Domani Group Logo">
-        </a>
-
-        <div class="nav-links">
-            <a href="#services">Services</a>
-            <a href="#experience">Past Performance</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-        </div>
-
-        <div class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.mobile-menu').classList.toggle('active')">
-            <span></span></span><span></span><span></span>
-        </div>
-    </div>
-</header>
+  <div class="container">
+    <a href="#home" class="logo">
+      <img src="logo.png" alt="Domani Group Logo">
+    </a>
+    <div class="nav-links">
+      <a href="#services">Servicesa>
+      <a href="#experience">Past Performancea>
+      <a href="#about">Abouta>
+      <a href="#contact">Contacta>
+    div>
+    <div class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.mobile-menu').classList.toggle('active')">
+      <span>span><span>span><span>span>
+    div>
+  div>
+header>
 
 <div class="mobile-menu">
-    <a href="#services">Services</a>
-    <a href="#experience">Past Performance</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-</div>
+  <a href="#services">Servicesa>
+  <a href="#experience">Past Performancea>
+  <a href="#about">Abouta>
+  <a href="#contact">Contacta>
+div>
 
 <section id="home" class="hero">
-    <div class="container">
-        <h1>Accelerating Insight</h1>
-        <h2>Mission-Focused Data & Analytics for the Federal Government</h2>
-        <p>We turn complex data into decisive advantage — faster than anyone else.</p>
-        <a href="#contact" class="btn">Schedule a Discovery Meeting</a>
-    </div>
-</section>
-
-<!-- (All your other sections are unchanged — only showing the critical parts here for brevity) -->
-
-<section id="about">
-    <div class="container">
-        <h2 style="text-align
+  <div class="container">
+    <h1>Accelerating Insight</h1>
+    <h2>Mission-Focused Data & Analytics for the Federal Government</h2>
+    <p>We
