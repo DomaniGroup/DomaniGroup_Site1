@@ -27,7 +27,22 @@
             z-index: 1000;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; position: relative; }
+
+        /* General container (no flex by default) */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header-specific flex layout */
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
         .logo img { height: 56px; transition: 0.3s; }
         .logo img:hover { transform: scale(1.05); }
 
@@ -77,7 +92,10 @@
         .btn:hover { background: #8b2d47; transform: translateY(-4px); }
 
         /* Sections */
-        section { padding: 110px 5%; }
+        section { 
+            padding: 110px 5%; 
+            scroll-margin-top: 90px; /* Helps with fixed header */
+        }
         .alt { background: var(--lightgray); }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 60px; }
         .card { background: var(--white); padding: 40px; border-radius: 12px; box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1); text-align: center; transition: 0.3s; }
@@ -97,7 +115,7 @@
         @media (max-width: 900px) {
             .hamburger { display: block; }
             .nav-links { display: none; }
-            .mobile-menu { top: 100%; /* Flush under header */ }
+            .mobile-menu { top: 100%; }
         }
         @media (max-width: 768px) {
             .hero h1 { font-size: 3.8rem; }
@@ -135,14 +153,15 @@
                 <span></span>
             </div>
         </div>
-    </header>
 
-    <div class="mobile-menu">
-        <a href="#services">Services</a>
-        <a href="#experience">Past Performance</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </div>
+        <!-- Mobile menu moved inside header -->
+        <div class="mobile-menu">
+            <a href="#services">Services</a>
+            <a href="#experience">Past Performance</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </header>
 
     <section id="home" class="hero">
         <div class="container">
@@ -259,7 +278,10 @@
         document.querySelectorAll('a[href^="#"]').forEach(a => {
             a.addEventListener('click', e => {
                 e.preventDefault();
-                document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+                const target = document.querySelector(a.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
                 document.querySelector('.mobile-menu').classList.remove('active');
                 document.querySelector('.hamburger').classList.remove('active');
             });
