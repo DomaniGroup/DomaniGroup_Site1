@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Domani Group | Accelerating Insight for the Mission</title>
     <meta name="description" content="Domani Group delivers mission-focused data engineering, AI/ML, predictive analytics, and decision-ready dashboards to the U.S. Federal Government and DoD.">
-    
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -14,11 +13,10 @@
             --lightgray: #f8f9fa;
             --white: #ffffff;
         }
-        body { margin:0; font-family:'Roboto', sans-serif; color:#333; line-height:1.6; }
-        a { text-decoration:none; }
-        h1, h2, h3, h4 { color:var(--navy); font-weight:700; }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Roboto', sans-serif; color:#333; line-height:1.6; overflow-x:hidden; }
+        h1,h2,h3,h4 { color:var(--navy); }
         
-        /* Header */
         header {
             background:var(--navy);
             padding:15px 0;
@@ -26,10 +24,11 @@
             width:100%;
             top:0;
             z-index:1000;
-            box-shadow:0 2px 10px rgba(0,0,0,0.2);
+            box-shadow:0 4px 20px rgba(0,0,0,0.2);
         }
-        .logo img { height:60px; }
-        nav { float:right; margin-top:15px; }
+        .container { max-width:1200px; margin:auto; padding:0 20px; }
+        .logo img { height:65px; }
+        nav { float:right; margin-top:18px; }
         nav a {
             color:white;
             margin:0 20px;
@@ -37,68 +36,100 @@
             font-size:1.1rem;
         }
         nav a:hover { color:var(--maroon); }
-        
-        /* Hero */
+
         .hero {
-            background:linear-gradient(rgba(10,31,61,0.85), rgba(10,31,61,0.9)), url('https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover no-repeat;
+            background:linear-gradient(rgba(10,31,61,0.88), rgba(10,31,61,0.92)),
+                        url('https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover no-repeat;
             height:100vh;
+            min-height:650px;
             display:flex;
             align-items:center;
-            color:white;
             text-align:center;
-        }
-        .hero h1 { font-size:4.5rem; margin:0; }
-        .hero h2 { font-size:2rem; font-weight:300; margin:20px 0 40px; }
-        .btn {
-            background:var(--maroon);
             color:white;
-            padding:16px 40px;
-            border-radius:4px;
-            font-size:1.3rem;
-            font-weight:600;
-            transition:0.3s;
         }
-        .btn:hover { background:#8b2d47; transform:scale(1.05); }
-        
-        /* Sections */
+        .hero h1 {
+            font-size:4.8rem;
+            font-weight:900;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.7);
+        }
+        .hero h2 {
+            font-size:2.1rem;
+            font-weight:300;
+            margin:20px 0 15px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+        }
+        .hero p {
+            font-size:1.4rem;
+            max-width:900px;
+            margin:20px auto;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+        }
+        .btn {
+            display:inline-block;
+            background:var(--maroon);
+            color:white !important;
+            font-size:1.4rem;
+            font-weight:700;
+            padding:18px 48px;
+            border-radius:6px;
+            margin-top:30px;
+            transition:all 0.3s;
+            box-shadow:0 6px 20px rgba(107,31,44,0.4);
+        }
+        .btn:hover {
+            background:#8b2d47;
+            transform:translateY(-3px);
+            box-shadow:0 10px 25px rgba(107,31,44,0.5);
+        }
+
         section { padding:100px 5%; }
         .alt { background:var(--lightgray); }
-        .container { max-width:1200px; margin:auto; }
-        .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:40px; margin-top:60px; }
+        .grid {
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+            gap:40px;
+            margin-top:60px;
+        }
         .card {
             background:white;
             padding:40px;
-            border-radius:8px;
-            box-shadow:0 5px 20px rgba(0,0,0,0.08);
+            border-radius:10px;
+            box-shadow:0 8px 30px rgba(0,0,0,0.1);
             text-align:center;
+            transition:transform 0.3s;
         }
-        .card h3 { color:var(--maroon); }
-        
-        /* Clients */
-        .clients { text-align:center; }
-        .clients img { height:80px; margin:20px; opacity:0.7; filter:grayscale(100%); transition:0.3s; }
-        .clients img:hover { opacity:1; filter:grayscale(0); }
-        
-        /* Footer */
+        .card:hover { transform:translateY(-10px); }
+        .card h3 { color:var(--maroon); margin-bottom:15px; }
+
         footer {
             background:var(--navy);
             color:white;
             text-align:center;
-            padding:60px 20px;
+            padding:70px 20px;
         }
-        footer a { color:var(--maroon); }
-        
+        footer a { color:var(--maroon); font-weight:600; }
+
+        @media (max-width:992px) {
+            .hero h1 { font-size:3.8rem; }
+            .hero h2 { font-size:1.8rem; }
+        }
         @media (max-width:768px) {
-            .hero h1 { font-size:3rem; }
             nav { float:none; text-align:center; margin-top:10px; }
-            nav a { display:block; margin:10px 0; }
+            nav a { display:block; margin:12px 0; }
+            .hero h1 { font-size:3rem; }
+            .hero h2 { font-size:1.6rem; }
+            .btn { padding:16px 40px; font-size:1.3rem; }
+        }
+        @media (max-width:480px) {
+            .hero h1 { font-size:2.4rem; }
+            .hero h2 { font-size:1.3rem; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;">
         <a href="#home" class="logo"><img src="https://i.imgur.com/0k9Y5jF.png" alt="Domani Group Logo"></a>
         <nav>
             <a href="#services">Services</a>
@@ -113,60 +144,33 @@
     <div class="container">
         <h1>Accelerating Insight</h1>
         <h2>Mission-Focused Data & Analytics for the Federal Government</h2>
-        <p style="font-size:1.4rem; max-width:800px; margin:auto;">
-            We turn complex data into decisive advantage — faster than anyone else.
-        </p>
-        <br><br>
+        <p>We turn complex data into decisive advantage — faster than anyone else.</p>
         <a href="#contact" class="btn">Schedule a Discovery Meeting</a>
     </div>
 </section>
 
 <section id="services">
     <div class="container">
-        <h2 style="text-align:center; font-size:3rem;">What We Deliver</h2>
+        <h2 style="text-align:center;font-size:3rem;margin-bottom:20px;">What We Deliver</h2>
         <div class="grid">
-            <div class="card">
-                <h3>Data Engineering & Integration</h3>
-                <p>Secure, scalable pipelines on classified networks and cloud (IL4–IL6).</p>
-            </div>
-            <div class="card">
-                <h3>AI / Machine Learning</h3>
-                <p>Predictive models for manpower, budget, maintenance, and threat forecasting.</p>
-            </div>
-            <div class="card">
-                <h3>Decision-Ready Dashboards</h3>
-                <p>Real-time visualizations used daily by 3-star leadership and program offices.</p>
-            </div>
-            <div class="card">
-                <h3>Cost & Financial Modeling</h3>
-                <p>Multi-customer joint mission cost models and $2B+ civilian pay forecasting.</p>
-            </div>
+            <div class="card"><h3>Data Engineering & Integration</h3><p>Secure, scalable pipelines on classified networks and cloud (IL4–IL6).</p></div>
+            <div class="card"><h3>AI / Machine Learning</h3><p>Predictive models for manpower, budget, maintenance, and threat forecasting.</p></div>
+            <div class="card"><h3>Decision-Ready Dashboards</h3><p>Real-time visualizations used daily by 3-star leadership and program offices.</p></div>
+            <div class="card"><h3>Cost & Financial Modeling</h3><p>Multi-customer joint mission cost models and $2B+ civilian pay forecasting.</p></div>
         </div>
     </div>
 </section>
 
 <section id="experience" class="alt">
     <div class="container">
-        <h2 style="text-align:center; font-size:3rem;">Proven Mission Impact</h2>
+        <h2 style="text-align:center;font-size:3rem;margin-bottom:20px;">Proven Mission Impact</h2>
         <div class="grid">
-            <div class="card">
-                <h3>SAF/FM & INDOPACOM</h3>
-                <p>Delivered $2 billion predictive analytics platform for civilian pay reporting and forecasting.</p>
-            </div>
-            <div class="card">
-                <h3>AETC</h3>
-                <p>Status-of-Funds dashboards used to brief 3-star generals weekly.</p>
-            </div>
-            <div class="card">
-                <h3>JDETO & SSC</h3>
-                <p>Automated workflow engines connecting program managers and financial analysts across classified boundaries.</p>
-            </div>
-            <div class="card">
-                <h3>Joint & Coalition Missions</h3>
-                <p>Built reusable cost models for multi-customer, multi-year programs.</p>
-            </div>
+            <div class="card"><h3>SAF/FM & INDOPACOM</h3><p>Delivered $2 billion predictive analytics platform for civilian pay reporting and forecasting.</p></div>
+            <div class="card"><h3>AETC</h3><p>Status-of-Funds dashboards used to brief 3-star generals weekly.</p></div>
+            <div class="card"><h3>JDETO & SSC</h3><p>Automated workflow engines connecting program managers and financial analysts across classified boundaries.</p></div>
+            <div class="card"><h3>Joint & Coalition Missions</h3><p>Built reusable cost models for multi-customer, multi-year programs.</p></div>
         </div>
-        <p style="text-align:center; margin-top:50px; font-size:1.2rem;">
+        <p style="text-align:center;margin-top:50px;font-size:1.2rem;">
             <strong>Clearances:</strong> Secret Facility • 100% of core staff hold active Secret or TS/SCI<br>
             Multiple GWAC, MAC, and agency-specific contract vehicles available
         </p>
@@ -175,23 +179,21 @@
 
 <section id="about">
     <div class="container">
-        <h2 style="text-align:center; font-size:3rem;">Why Domani Group</h2>
-        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:60px; margin-top:60px;">
-            <div style="flex:1; min-width:300px;">
-                <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Domani Group Team" style="width:100%; border-radius:8px;">
+        <h2 style="text-align:center;font-size:3rem;margin-bottom:20px;">Why Domani Group</h2>
+        <div style="display:flex;flex-wrap:wrap;gap:60px;align-items:center;margin-top:60px;">
+            <div style="flex:1;min-width:300px;">
+                <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team" style="width:100%;border-radius:10px;">
             </div>
-            <div style="flex:2; min-width:300px;">
-                <h3>We Are the Disrupter the Mission Needs</h3>
-                <ul style="font-size:1.2rem; line-height:2;">
+            <div style="flex:2;min-width:300px;">
+                <h3 style="font-size:2rem;color:var(--maroon);">We Are the Disrupter the Mission Needs</h3>
+                <ul style="font-size:1.2rem;line-height:2.2;margin:30px 0;">
                     <li>Speed-to-solution that outpaces traditional Beltway contractors</li>
                     <li>Deep mission understanding from former uniformed and civilian leaders</li>
                     <li>100% U.S.-based, cleared American talent</li>
                     <li>Agile delivery on classified networks</li>
                     <li>Obsessed with outcomes, not hours</li>
                 </ul>
-                <br>
-                <p><strong>CEO Biography (replace with real photo & bio)</strong><br>
-                <em>Coming soon – or drop your headshot and 4–6 sentence bio here.</em></p>
+                <p><strong>CEO Biography</strong> – coming soon (or drop headshot + bio here)</p>
             </div>
         </div>
     </div>
@@ -200,32 +202,29 @@
 <section id="contact" class="alt">
     <div class="container" style="text-align:center;">
         <h2 style="font-size:3rem;">Let’s Solve Your Hardest Data Problem</h2>
-        <p style="font-size:1.5rem; max-width:800px; margin:40px auto;">
+        <p style="font-size:1.5rem;max-width:900px;margin:40px auto;">
             Whether you’re an O-6/GS-15 requirements owner or an industry partner looking to team, 
             we build custom solutions that move at the speed of mission.
         </p>
-        <a href="mailto:info@domanigroup.net" class="btn" style="font-size:1.5rem; padding:20px 50px;">Schedule Discovery Meeting</a>
-        <p style="margin-top:40px; font-size:1.2rem;">
-            <strong>info@domanigroup.net</strong> | DomaniGroup.net
+        <a href="mailto:dev@domanigroup.net" class="btn">Schedule Discovery Meeting</a>
+        <p style="margin-top:50px;font-size:1.3rem;">
+            <strong>dev@domanigroup.net</strong> | DomaniGroup.net
         </p>
     </div>
 </section>
 
 <footer>
     <div class="container">
-        <p>&copy; 2025 Domani Group. All rights reserved. | CAGE: XXXXX • UEI: XXXXX</p>
-        <p><a href="mailto:info@domanigroup.net">info@domanigroup.net</a></p>
+        <p>© 2025 Domani Group. All rights reserved.<br>
+           CAGE: 07B65 • UEI: ELPXG3MZPMG3</p>
     </div>
 </footer>
 
 <script>
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
         });
     });
 </script>
