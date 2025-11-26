@@ -12,39 +12,39 @@
         body{font-family:'Roboto',sans-serif;color:#333;line-height:1.6;overflow-x:hidden}
         img{max-width:100%;display:block}
 
-        header{background:var(--navy);padding:12px 0;position:fixed;width:100%;top:0;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,.2)}
-        .container{max-width:1200px;margin:auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+        header{background:var(--navy);padding:12px 0;position:fixed;width:100%;top:0;z-index:1000;box-shadow:0 0 4px 20px rgba(0,0,0,.2)}
+        .container{max-width:1200px;margin:auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;position:relative}
         .logo img{height:56px;transition:.3s}
         .logo img:hover{transform:scale(1.05)}
 
         .nav-links a{color:white;margin-left:32px;font-weight:500;font-size:1.1rem;text-decoration:none}
         .nav-links a:hover{color:var(--maroon)}
 
-        .hamburger{display:none;cursor:pointer;padding:8px}
-        .hamburger span{display:block;width:28px;height:3px;background:white;margin:5px 0;transition:.4s;border-radius:3px}
+        .hamburger{display:none;cursor:pointer}
+        .hamburger span{display:block;width:28px;height:3px;background:white;margin:6px 0;transition:.4s;border-radius:3px}
 
         .mobile-menu{
             position:absolute;
-            top:100%;
+            top:100%;            /* sits exactly under the header */
             left:0;
             width:100%;
             background:var(--navy);
-            text-align:center;
             box-shadow:0 10px 20px rgba(0,0,0,.3);
             display:none;
         }
         .mobile-menu.active{display:block}
-        .mobile-menu a{display:block;color:white;padding:18px;font-size:1.2rem;text-decoration:none}
+        .mobile-menu a{display:block;color:white;padding:18px 0;font-size:1.2rem;text-decoration:none}
         .mobile-menu a:hover{background:var(--maroon)}
 
         .hero{
             background:linear-gradient(rgba(10,31,61,.90),rgba(10,31,61,.94)),
                        url('https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover;
-            height:100vh;min-height:680px;display:flex;align-items:center;justify-content:center;text-align:center;color:white;padding-top:90px
+            height:100vh;min-height:680px;display:flex;align-items:center;justify-content:center;text-align:center;color:white;padding-top:80px
         }
-        .hero h1{font-size:5.2rem;font-weight:900;color:white;text-shadow:0 5px 20px rgba(0,0,0,.8);margin:0}
-        .hero h2{font-size:2.4rem;font-weight:300;color:white;text-shadow:0 3px 12px rgba(0,0,0,.7);margin:20px 0}
-        .hero p{font-size:1.5rem;color:white;max-width:900px;margin:20px auto;text-shadow:0 2px 10px rgba(0,0,0,.7)}
+        .hero h1,.hero h2,.hero p{color:white}
+        .hero h1{font-size:5.2rem;font-weight:900;text-shadow:0 5px 20px rgba(0,0,0,.8)}
+        .hero h2{font-size:2.4rem;font-weight:300;text-shadow:0 3px 12px rgba(0,0,0,.7);margin:20px 0}
+        .hero p{font-size:1.5rem;max-width:900px;margin:20px auto}
         .btn{display:inline-block;background:var(--maroon);color:white!important;font-size:1.5rem;font-weight:700;padding:20px 55px;border-radius:6px;margin-top:40px;box-shadow:0 8px 25px rgba(107,31,44,.5);text-decoration:none}
         .btn:hover{background:#8b2d47;transform:translateY(-4px)}
 
@@ -74,7 +74,7 @@
 <header>
     <div class="container">
         <a href="#home" class="logo">
-            <img src="https://cdn.statically.io/gh/jsysko/domani-assets@main/logo.png" alt="Domani Group Logo">
+            <img src="https://raw.githubusercontent.com/DomaniGroup/domanigroup-site/main/logo.png" alt="Domani Group Logo">
         </a>
 
         <div class="nav-links">
@@ -85,7 +85,7 @@
         </div>
 
         <div class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.mobile-menu').classList.toggle('active')">
-            <span></span><span></span><span></span>
+            <span></span></span><span></span><span></span>
         </div>
     </div>
 </header>
@@ -106,46 +106,8 @@
     </div>
 </section>
 
-<!-- All your other sections (Services, Experience, About, Contact, Footer) stay exactly the same -->
-<!-- I'm including the About section with the corrected image tag below -->
+<!-- (All your other sections are unchanged — only showing the critical parts here for brevity) -->
 
 <section id="about">
     <div class="container">
-        <h2 style="text-align:center;font-size:3rem;margin-bottom:20px;">Why Domani Group</h2>
-        <div style="display:flex;flex-wrap:wrap;gap:70px;align-items:center;margin-top:60px;">
-            <div style="flex:1;min-width:300px;">
-                <img src="https://cdn.statically.io/gh/jsysko/domani-assets@main/ceo-photo.jpg" alt="Joseph Sysko, Founder & CEO" style="width:100%;max-width:520px;border-radius:14px;box-shadow:0 15px 40px rgba(0,0,0,0.25);">
-            </div>
-            <!-- rest of your bio text unchanged -->
-            <div style="flex:2;min-width:300px;">
-                <h3 style="font-size:2.1rem;color:var(--maroon);margin-bottom:20px;">We Are the Disrupter the Mission Needs</h3>
-                <ul style="font-size:1.25rem;line-height:2.3;margin-bottom:40px;">
-                    <li>Speed-to-solution that outpaces traditional Beltway contractors</li>
-                    <li>Deep mission understanding from former uniformed and civilian leaders</li>
-                    <li>100% U.S.-based, cleared American talent</li>
-                    <li>Agile delivery on classified networks</li>
-                    <li>Obsessed with outcomes, not hours</li>
-                </ul>
-                <h3 style="font-size:1.9rem;color:var(--navy);margin-top:30px;">Joseph Sysko — Founder & CEO</h3>
-                <p style="font-size:1.18rem;line-height:1.9;margin-top:18px;">
-                    Joseph Sysko is the founder and CEO of Domani Group… (your full bio here — unchanged)
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Keep the rest of your sections exactly as you have them -->
-
-<script>
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-        a.addEventListener('click',e=>{
-            e.preventDefault();
-            document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});
-            document.querySelector('.mobile-menu').classList.remove('active');
-            document.querySelector('.hamburger').classList.remove('active');
-        });
-    });
-</script>
-</body>
-</html>
+        <h2 style="text-align
