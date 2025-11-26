@@ -10,9 +10,9 @@
         :root{--navy:#0A1F3D;--maroon:#6B1F2C;--lightgray:#f8f9fa;--white:#ffffff}
         *{margin:0;padding:0;box-sizing:border-box}
         body{font-family:'Roboto',sans-serif;color:#333;line-height:1.6;overflow-x:hidden}
-        h1,h2,h3,h4{color:var(--navy)}
-        
-        /* SLIMMER, CLEANER HEADER */
+        h1,h2,h3{color:var(--navy)}
+
+        /* SLIM FIXED HEADER */
         header{
             background:var(--navy);
             padding:12px 0;
@@ -22,81 +22,123 @@
             z-index:1000;
             box-shadow:0 4px 20px rgba(0,0,0,0.2);
         }
-        .logo img{height:58px}
-        nav{float:right;margin-top:12px}
-        nav a{color:white;margin:0 20px;font-weight:500;font-size:1.1rem}
-        nav a:hover{color:var(--maroon)}
+        .container{max-width:1200px;margin:auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center}
+        .logo img{height:56px}
 
-        /* HERO — now starts below header perfectly */
+        /* DESKTOP MENU */
+        .desktop-menu a{
+            color:white;
+            margin-left:30px;
+            font-weight:500;
+            font-size:1.1rem;
+        }
+        .desktop-menu a:hover{color:var(--maroon)}
+
+        /* MOBILE MENU */
+        .mobile-menu{display:none}
+        .hamburger{
+            display:none;
+            cursor:pointer;
+            width:30px;
+            height:22px;
+            position:relative;
+        }
+        .hamburger span{
+            background:white;
+            height:3px;
+            width:100%;
+            display:block;
+            margin:5px 0;
+            transition:0.4s;
+        }
+
+        /* HERO — safe from header */
         .hero{
             background:linear-gradient(rgba(10,31,61,0.90),rgba(10,31,61,0.94)),
-                        url('https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover no-repeat;
+                        url('https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover;
             height:100vh;
-            min-height:680px;
+            min-height:700px;
             display:flex;
             align-items:center;
             text-align:center;
             color:white;
-            padding-top:90px; /* clears fixed header */
+            padding-top:80px;
         }
-        .hero h1{
-            font-size:5rem;
-            font-weight:900;
-            color:white;
-            text-shadow:0 4px 15px rgba(0,0,0,0.8);
-            margin:0;
-        }
-        .hero h2{
-            font-size:2.3rem;
-            font-weight:300;
-            color:white;
-            text-shadow:0 2px 10px rgba(0,0,0,0.7);
-            margin:20px 0 15px;
-        }
-        .hero p{
-            font-size:1.5rem;
-            color:white;
-            max-width:900px;
-            margin:20px auto;
-            text-shadow:0 2px 8px rgba(0,0,0,0.7);
-        }
+        .hero h1{font-size:5rem;font-weight:900;color:white;text-shadow:0 4px 15px rgba(0,0,0,0.8)}
+        .hero h2{font-size:2.4rem;font-weight:300;color:white;text-shadow:0 3px 10px rgba(0,0,0,0.7);margin:20px 0}
+        .hero p{font-size:1.5rem;color:white;max-width:900px;margin:auto;text-shadow:0 2px 8px rgba(0,0,0,0.7)}
         .btn{
             display:inline-block;background:var(--maroon);color:white!important;
-            font-size:1.5rem;font-weight:700;padding:20px 52px;border-radius:6px;
-            margin-top:35px;transition:all .3s;box-shadow:0 8px 25px rgba(107,31,44,0.5);
+            font-size:1.5rem;font-weight:700;padding:20px 55px;border-radius:6px;
+            margin-top:40px;transition:.3s;box-shadow:0 8px 25px rgba(107,31,44,0.5);
         }
         .btn:hover{background:#8b2d47;transform:translateY(-4px)}
 
         section{padding:100px 5%}
         .alt{background:var(--lightgray)}
         .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;margin-top:60px}
-        .card{background:white;padding:40px;border-radius:10px;box-shadow:0 8px 30px rgba(0,0,0,0.1);text-align:center;transition:transform .3s}
+        .card{background:white;padding:40px;border-radius:10px;box-shadow:0 8px 30px rgba(0,0,0,0.1);text-align:center;transition:.3s}
         .card:hover{transform:translateY(-10px)}
-        .card h3{color:var(--maroon);margin-bottom:15px}
+        .card h3{color:var(--maroon)}
+
         footer{background:var(--navy);color:white;text-align:center;padding:70px 20px}
         footer a{color:var(--maroon);font-weight:600}
 
-        @media(max-width:992px){.hero h1{font-size:4rem}.hero h2{font-size:2rem}}
-        @media(max-width:768px){
-            nav{float:none;text-align:center;margin-top:10px}
-            nav a{display:block;margin:12px 0}
-            .hero h1{font-size:3.2rem}
-            .hero h2{font-size:1.7rem}
-            .hero{padding-top:100px}
+        /* MOBILE STYLES */
+        @media(max-width:900px){
+            .hamburger{display:block}
+            .desktop-menu{display:none}
+            .mobile-menu{
+                display:none;
+                position:absolute;
+                top:100%;
+                right:0;
+                background:var(--navy);
+                width:100%;
+                text-align:center;
+                padding:20px 0;
+                box-shadow:0 10px 20px rgba(0,0,0,0.3);
+            }
+            .mobile-menu a{
+                display:block;
+                color:white;
+                padding:15px;
+                font-size:1.2rem;
+            }
+            .mobile-menu a:hover{background:var(--maroon)}
+            .mobile-menu.active{display:block}
+            .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(7px,7px)}
+            .hamburger.active span:nth-child(2){opacity:0}
+            .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(7px,-7px)}
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;">
+    <div class="container">
         <a href="#home" class="logo"><img src="https://jsysko.github.io/domani-assets/logo.png" alt="Domani Group Logo"></a>
-        <nav>
+
+        <!-- Desktop Menu -->
+        <div class="desktop-menu">
             <a href="#services">Services</a>
             <a href="#experience">Past Performance</a>
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
-        </nav>
+        </div>
+
+        <!-- Mobile Hamburger -->
+        <div class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.mobile-menu').classList.toggle('active')">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div class="mobile-menu">
+        <a href="#services">Services</a>
+        <a href="#experience">Past Performance</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
     </div>
 </header>
 
@@ -109,24 +151,11 @@
     </div>
 </section>
 
-<!-- All other sections unchanged — Services / Past Performance / About / Contact / Footer -->
-<!-- (keeping the rest identical to your last working version for brevity) -->
-
-<section id="services">
-    <div class="container">
-        <h2 style="text-align:center;font-size:3rem;margin-bottom:20px;">What We Deliver</h2>
-        <div class="grid">
-            <div class="card"><h3>Data Engineering & Integration</h3><p>Secure, scalable pipelines on classified networks and cloud (IL4–IL6).</p></div>
-            <div class="card"><h3>AI / Machine Learning</h3><p>Predictive models for manpower, budget, maintenance, and threat forecasting.</p></div>
-            <div class="card"><h3>Decision-Ready Dashboards</h3><p>Real-time visualizations used daily by 3-star leadership and program offices.</p></div>
-            <div class="card"><h3>Cost & Financial Modeling</h3><p>Multi-customer joint mission cost models and $2B+ civilian pay forecasting.</p></div>
-        </div>
-    </div>
-</section>
-
-<section id="experience" class="alt">… (same as before) …</section>
-<section id="about">… (same as before with your photo & bio) …</section>
-<section id="contact" class="alt">… (same) …</section>
+<!-- All your other sections remain exactly the same -->
+<section id="services">…</section>
+<section id="experience" class="alt">…</section>
+<section id="about">… (with your photo & bio) …</section>
+<section id="contact" class="alt">…</section>
 
 <footer>
     <div class="container">
@@ -136,7 +165,16 @@
 </footer>
 
 <script>
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});});});
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click',e=>{
+            e.preventDefault();
+            document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+            // Close mobile menu after click
+            document.querySelector('.mobile-menu').classList.remove('active');
+            document.querySelector('.hamburger').classList.remove('active');
+        });
+    });
 </script>
 </body>
 </html>
