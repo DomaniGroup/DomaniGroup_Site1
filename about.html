@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domani Group | About</title>
+    <meta name="description" content="Learn more about Domani Group and Founder & CEO Joseph Sysko — delivering mission-focused data and analytics for the Federal Government.">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0A1F3D;
+            --maroon: #6B1F2C;
+            --lightgray: #f8f9fa;
+            --white: #ffffff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', sans-serif; color: #333; line-height: 1.6; overflow-x: hidden; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        /* Header - Slim and fixed */
+        header {
+            background: var(--navy);
+            padding: 12px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .logo img { height: 56px; transition: 0.3s; }
+        .logo img:hover { transform: scale(1.05); }
+
+        .nav-links { display: flex; }
+        .nav-links a { color: white; margin-left: 32px; font-weight: 500; font-size: 1.1rem; text-decoration: none; }
+        .nav-links a:hover { color: var(--maroon); }
+
+        .hamburger { display: none; cursor: pointer; padding: 6px; }
+        .hamburger span { display: block; width: 28px; height: 3px; background: white; margin: 6px 0; transition: 0.4s; border-radius: 3px; }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(7px, 7px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
+
+        .mobile-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: var(--navy);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            display: none;
+            text-align: center;
+        }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; color: white; padding: 18px 20px; font-size: 1.2rem; text-decoration: none; }
+        .mobile-menu a:hover { background: var(--maroon); }
+
+        section {
+            padding: 110px 5%;
+            scroll-margin-top: 90px;
+        }
+
+        .about-flex { display: flex; flex-wrap: wrap; gap: 70px; align-items: center; margin-top: 60px; }
+        .about-flex img { width: 100%; max-width: 520px; border-radius: 14px; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25); }
+
+        footer { background: var(--navy); color: var(--white); text-align: center; padding: 70px 20px; }
+
+        @media (max-width: 900px) {
+            .hamburger { display: block; }
+            .nav-links { display: none; }
+            .mobile-menu { top: 100%; }
+        }
+        @media (max-width: 768px) {
+            section { padding: 90px 5%; }
+            .about-flex { flex-direction: column; text-align: center; gap: 40px; }
+        }
+        @media (max-width: 480px) {
+            section { padding: 70px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <!-- Logo goes back to home page -->
+            <a href="index.html#home" class="logo">
+                <img src="logo.png" alt="Domani Group Logo">
+            </a>
+            <div class="nav-links">
+                <a href="index.html#services">Services</a>
+                <a href="index.html#experience">Past Performance</a>
+                <a href="#about">About</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <div class="hamburger" onclick="this.classList.toggle('active'); document.querySelector('.mobile-menu').classList.toggle('active')">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="mobile-menu">
+            <a href="index.html#services">Services</a>
+            <a href="index.html#experience">Past Performance</a>
+            <a href="#about">About</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 3rem; margin-bottom: 10px;">About Domani Group</h2>
+            <p style="text-align: center; font-size: 1.25rem; max-width: 800px; margin: 0 auto 40px;">
+                Domani Group partners with federal decision-makers to turn complex data into decisive mission and business advantages.
+            </p>
+
+            <div class="about-flex">
+                <div>
+                    <img src="ceo-photo.jpg" alt="Joseph Sysko, Founder & CEO">
+                </div>
+                <div>
+                    <h3 style="font-size: 2.1rem; color: var(--maroon); margin-bottom: 20px;">
+                        Why Domani Group Works for Federal Missions
+                    </h3>
+                    <h4 style="font-size: 1.3rem; color: var(--navy); margin-bottom: 15px;">
+                        The Disrupter Your Mission Needs
+                    </h4>
+                    <ul style="font-size: 1.1rem; line-height: 2.1; margin-bottom: 35px; padding-left: 20px;">
+                        <li>Speed-to-solution that outpaces traditional Beltway contractors</li>
+                        <li>Deep mission understanding from former uniformed and civilian financial leaders</li>
+                        <li>100% U.S.-based, cleared American talent</li>
+                        <li>Proven delivery on classified networks</li>
+                        <li>Measured by mission outcomes, not level-of-effort hours</li>
+                    </ul>
+
+                    <h3 style="font-size: 1.9rem; color: var(--navy); margin-top: 10px;">Joseph Sysko — Founder & CEO</h3>
+                    <p style="font-size: 1.05rem; line-height: 1.9; margin-top: 18px;">
+                        Joseph Sysko is the founder and CEO of Domani Group, where he leads a team focused on turning complex federal data into decisive mission and business advantages. A results-oriented leader with a blend of military precision and private-sector agility, he specializes in data analytics, business intelligence, digital transformation, and decision-support systems for government clients.<br><br>
+                        His career spans high-stakes financial management and advanced analytics for the U.S. Air Force, the National Guard Bureau (overseeing multi-billion-dollar portfolios), and top-tier consulting engagements supporting senior leaders.<br><br>
+                        Throughout, he has built and led cross-functional teams that deliver mission-critical insights, streamline operations, and drive measurable, documented outcomes.<br><br>
+                        At Domani Group, Joe remains hands-on, partnering with executives, operators, and analysts to harness the full power of their data—enabling smarter decisions, greater efficiency, and a durable competitive edge.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p style="font-size: 1.1rem;">
+                © 2025 Domani Group. All rights reserved.<br>
+                CAGE: 07B65 • UEI: ELPXG3MZPMG3
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(a.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+                document.querySelector('.mobile-menu').classList.remove('active');
+                document.querySelector('.hamburger').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
