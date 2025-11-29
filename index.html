@@ -102,11 +102,6 @@
         .card:hover { transform: translateY(-12px); }
         .card h3 { color: var(--maroon); font-size: 1.6rem; margin-bottom: 15px; }
 
-        /* About Section */
-        .about-flex { display: flex; flex-wrap: wrap; gap: 70px; align-items: center; margin-top: 60px; }
-        .about-flex img { width: 100%; max-width: 520px; border-radius: 14px; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25); }
-        .about-flex ul { font-size: 1.25rem; line-height: 2.3; margin-bottom: 40px; }
-
         /* Footer */
         footer { background: var(--navy); color: var(--white); text-align: center; padding: 70px 20px; }
         footer a { color: var(--maroon); font-weight: 600; }
@@ -123,7 +118,6 @@
             .hero { padding-top: 100px; }
             section { padding: 80px 5%; }
             .grid { gap: 30px; }
-            .about-flex { flex-direction: column; text-align: center; gap: 40px; }
         }
         @media (max-width: 480px) {
             .hero h1 { font-size: 3rem; }
@@ -144,7 +138,7 @@
             <div class="nav-links">
                 <a href="#services">Services</a>
                 <a href="#experience">Past Performance</a>
-                <a href="#about">About</a>
+                <a href="about.html">About</a>
                 <a href="#contact">Contact</a>
             </div>
             <div class="hamburger" onclick="this.classList.toggle('active'); document.querySelector('.mobile-menu').classList.toggle('active')">
@@ -154,21 +148,21 @@
             </div>
         </div>
 
-        <!-- Mobile menu moved inside header -->
+        <!-- Mobile menu -->
         <div class="mobile-menu">
             <a href="#services">Services</a>
             <a href="#experience">Past Performance</a>
-            <a href="#about">About</a>
+            <a href="about.html">About</a>
             <a href="#contact">Contact</a>
         </div>
     </header>
 
     <section id="home" class="hero">
         <div class="container">
-            <h1>Accelerating Insight</h1>
-            <h2>Mission-Focused Data & Analytics for the Federal Government</h2>
-            <p>We turn complex data into decisive advantage — faster than anyone else.</p>
-            <a href="#contact" class="btn">Schedule a Discovery Meeting</a>
+            <h1>Accelerating Mission Insight</h1>
+            <h2>Mission-Focused Data & Analytics for Federal Decision-Makers</h2>
+            <p>We turn fragmented federal data into secure, audit-ready insight that supports PPBE, oversight, and day-to-day mission decisions in weeks—not years.</p>
+            <a href="#contact" class="btn">Schedule a 20-Minute Discovery Call</a>
         </div>
     </section>
 
@@ -178,19 +172,27 @@
             <div class="grid">
                 <div class="card">
                     <h3>Data Engineering & Integration</h3>
-                    <p>We design and automate secure, compliant data pipelines that integrate legacy systems, enterprise ERPs, and mission platforms into a single, auditable source of truth.</p>
+                    <p>We design and automate secure, compliant data pipelines that connect legacy systems, ERPs, and mission platforms into a single, auditable source of truth—ready for dashboards, AI, and oversight reviews.</p>
                 </div>
                 <div class="card">
                     <h3>AI / Machine Learning</h3>
-                    <p>We apply explainable AI and machine learning to federal data to detect risk, forecast outcomes, and support defensible, evidence-based decisions.</p>
+                    <p>We apply explainable AI and machine learning to federal data to detect risk, forecast outcomes, and support defensible, evidence-based decisions that can stand up to audit and congressional scrutiny.</p>
                 </div>
                 <div class="card">
                     <h3>Decision-Ready Dashboards</h3>
-                    <p>We build role-based, CAC-enabled dashboards that surface mission-critical KPIs, drill-downs, and trends leaders need for real-time situational awareness and oversight.</p>
+                    <p>We build role-based, CAC-enabled dashboards that surface mission-critical KPIs, drill-downs, and trends leaders need for real-time situational awareness, oversight, and rapid course-correction.</p>
                 </div>
                 <div class="card">
                     <h3>Cost & Financial Modeling</h3>
-                    <p>We develop transparent, auditable cost and financial models that quantify trade-offs, support PPBE and budget justification, and strengthen stewardship of taxpayer dollars.</p>
+                    <p>We develop transparent, auditable cost and financial models that quantify trade-offs, support PPBE and budget justification, and strengthen visible stewardship of taxpayer dollars.</p>
+                </div>
+                <!-- New About teaser card -->
+                <div class="card">
+                    <h3>About Domani Group</h3>
+                    <p>Learn how Domani Group and Founder &amp; CEO Joseph Sysko turn complex federal data into decisive mission and business advantages.</p>
+                    <a href="about.html" style="display:inline-block;margin-top:18px;font-weight:600;color:var(--maroon);text-decoration:none;">
+                        Meet the Founder &rarr;
+                    </a>
                 </div>
             </div>
         </div>
@@ -202,65 +204,37 @@
             <div class="grid">
                 <div class="card">
                     <h3>Secretary of the Air Force, Financial Management</h3>
-                    <p>Developed data analysis and forecasting models for the Air Force civilian pay program.</p></p>
+                    <p>Developed advanced data analysis and forecasting models for the Air Force-wide civilian pay program, improving visibility into execution and out-year requirements.</p>
                 </div>
                 <div class="card">
                     <h3>Air Education & Training Command</h3>
-                    <p>Architected Status-of-Funds dashboards used to brief a three-star commander.</p>
+                    <p>Architected enterprise Status-of-Funds dashboards used to brief a three-star MAJCOM commander on obligation and execution performance.</p>
                 </div>
                 <div class="card">
                     <h3>Joint Directed Energy Transition Office</h3>
-                    <p>Integrated workflow and general ledger data, connecting program managers and financial managers.</p>
+                    <p>Integrated workflow and general ledger data, creating a shared view that connected program managers and financial managers on cost, schedule, and performance.</p>
                 </div>
                 <div class="card">
                     <h3>Joint Combatant Commands</h3>
-                    <p>Built reusable cost models for multi-customer, multi-year programs.</p>
+                    <p>Built reusable cost models for multi-customer, multi-year programs, enabling consistent, defensible estimates across Combatant Commands and stakeholders.</p>
                 </div>
             </div>
             <p style="text-align: center; margin-top: 60px; font-size: 1.25rem;">
-                <strong>Clearances:</strong> 100% of core staff hold active Secret or TS/SCI<br>
-                Multiple agency-specific contract vehicles available; rapid obligation
+                <strong>Clearances:</strong> 100% of core staff hold active Secret or TS/SCI.<br>
+                Multiple agency-specific contract vehicles available for rapid obligation.
             </p>
-        </div>
-    </section>
-
-    <section id="about">
-        <div class="container">
-            <h2 style="text-align: center; font-size: 3rem; margin-bottom: 20px;">Why Domani Group</h2>
-            <div class="about-flex">
-                <div>
-                    <img src="ceo-photo.jpg" alt="Joseph Sysko, Founder & CEO">
-                </div>
-                <div>
-                    <h3 style="font-size: 2.1rem; color: var(--maroon); margin-bottom: 20px;">We Are the Disrupter the Mission Needs</h3>
-                    <ul style="font-size: 1.25rem; line-height: 2.3; margin-bottom: 40px;">
-                        <li>Speed-to-solution that outpaces traditional Beltway contractors</li>
-                        <li>Deep mission understanding from former uniformed and civilian leaders</li>
-                        <li>100% U.S.-based, cleared American talent</li>
-                        <li>Agile delivery on classified networks</li>
-                        <li>Obsessed with outcomes, not hours</li>
-                    </ul>
-                    <h3 style="font-size: 1.9rem; color: var(--navy); margin-top: 30px;">Joseph Sysko — Founder & CEO</h3>
-                    <p style="font-size: 1.18rem; line-height: 1.9; margin-top: 18px;">
-                        Joseph Sysko is the founder and CEO of Domani Group, where he leads a team passionate about transforming data into decisive business advantages. A results-oriented leader with a rare blend of military precision and private-sector agility, he specializes in data analytics, business intelligence, digital transformation, and decision-support systems.<br><br>
-                        His career spans high-stakes financial management and advanced analytics for the U.S. Air Force, the National Guard Bureau (overseeing multi-billion-dollar portfolios), and top-tier consulting engagements.<br><br>
-                        Throughout, he has consistently built and led cross-functional teams that deliver mission-critical insights, streamline operations, and drive measurable outcomes.<br><br>
-                        At Domani Group, Joe remains hands-on, partnering with executives and analysts alike to harness the full power of their data — enabling smarter decisions, greater efficiency, and lasting competitive edge.
-                    </p>
-                </div>
-            </div>
         </div>
     </section>
 
     <section id="contact" class="alt">
         <div class="container" style="text-align: center;">
-            <h2 style="font-size: 3.2rem;">Let’s Solve Your Hardest Data Problem</h2>
+            <h2 style="font-size: 3.2rem;">Let’s Tackle Your Hardest Data Problem</h2>
             <p style="font-size: 1.6rem; max-width: 900px; margin: 40px auto;">
-                Whether you’re an O-6/GS-15 requirements owner or an industry partner looking to team, we build custom solutions that move at the speed of mission.
+                Whether you’re an O-6/GS-15 requirements owner or an industry partner looking to team, we build secure, compliant data solutions that move at the speed of mission.
             </p>
-            <a href="mailto:dev@domanigroup.net" class="btn">Schedule Discovery Meeting</a>
+            <a href="mailto:dev@domanigroup.net" class="btn">Schedule a 20-Minute Discovery Call</a>
             <p style="margin-top: 60px; font-size: 1.4rem;">
-                <strong>dev@domanigroup.net</strong> | DomaniGroup.net
+                Or contact us directly at <strong>dev@domanigroup.net</strong>
             </p>
         </div>
     </section>
