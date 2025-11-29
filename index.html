@@ -75,17 +75,16 @@
 
         /* Hero */
         .hero {
-        background: linear-gradient(rgba(10, 31, 61, 0.90), rgba(10, 31, 61, 0.94)), url('https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover;
-        height: 100vh;
-        min-height: 680px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: var(--white);
-        padding-top: 120px; /* Extra space so h1 clears fixed header */
+            background: linear-gradient(rgba(10, 31, 61, 0.90), rgba(10, 31, 61, 0.94)), url('https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover;
+            min-height: calc(100vh - 80px); /* Full viewport minus header */
+            margin-top: 80px; /* Push entire hero below fixed header */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 40px 0;
         }
-        
         .hero h1 { font-size: 5rem; font-weight: 900; text-shadow: 0 5px 20px rgba(0, 0, 0, 0.8); margin: 0; color: var(--white); }
         .hero h2 { font-size: 2.3rem; font-weight: 300; text-shadow: 0 3px 12px rgba(0, 0, 0, 0.7); margin: 20px 0; color: var(--white); }
         .hero p { font-size: 1.5rem; max-width: 900px; margin: 20px auto; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7); color: var(--white); }
@@ -95,7 +94,7 @@
         /* Sections */
         section { 
             padding: 110px 5%; 
-            scroll-margin-top: 90px; /* Helps with fixed header */
+            scroll-margin-top: 90px; /* Helps with fixed header when using #anchors */
         }
         .alt { background: var(--lightgray); }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 60px; }
@@ -116,7 +115,6 @@
         @media (max-width: 768px) {
             .hero h1 { font-size: 3.8rem; }
             .hero h2 { font-size: 1.9rem; }
-            .hero { padding-top: 100px; }
             section { padding: 80px 5%; }
             .grid { gap: 30px; }
         }
@@ -151,10 +149,9 @@
 
         <!-- Mobile menu -->
         <div class="mobile-menu">
-        <a href="index.html#home">Home</a>
-        <a href="about.html">About</a>
-    </div>
-    
+            <a href="index.html#home">Home</a>
+            <a href="about.html">About</a>
+        </div>
     </header>
 
     <section id="home" class="hero">
@@ -162,7 +159,7 @@
             <h1>Accelerating Mission Insight</h1>
             <h2>Mission-Focused Data & Analytics for Federal Decision-Makers</h2>
             <p>We turn fragmented federal data into secure, audit-ready insight that supports PPBE, oversight, and day-to-day mission decisions in weeks—not years.</p>
-            <a<a href="mailto:dev@domanigroup.net?subject=Discovery%20Call%20with%20Domani%20Group" class="btn">
+            <a href="mailto:dev@domanigroup.net?subject=Discovery%20Call%20with%20Domani%20Group" class="btn">
                 Schedule a 20-Minute Discovery Call
             </a>
         </div>
@@ -188,7 +185,7 @@
                     <h3>Cost & Financial Modeling</h3>
                     <p>We develop transparent, auditable cost and financial models that quantify trade-offs, support PPBE and budget justification, and strengthen visible stewardship of taxpayer dollars.</p>
                 </div>
-                <!-- New About teaser card -->
+                <!-- About teaser card -->
                 <div class="card">
                     <h3>About Domani Group</h3>
                     <p>Learn how Domani Group and Founder &amp; CEO Joseph Sysko turn complex federal data into decisive mission and business advantages.</p>
