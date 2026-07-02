@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Domani Group | Accelerating Mission Insight</title>
+<meta name="description" content="Domani Group delivers mission-focused data engineering, AI/ML, and decision-ready analytics to the U.S. Federal Government and DoD. Builders of CLEAR — civilian pay analytics for the entire U.S. Air Force.">
+<link rel="canonical" href="https://domanigroup.ai/">
+<meta name="theme-color" content="#4A0E24">
+<meta property="og:title" content="Domani Group | Accelerating Mission Insight">
+<meta property="og:description" content="Mission-focused data & analytics for federal decision-makers. Builders of CLEAR — Civilian Labor Execution Analytics & Resourcing — for the U.S. Air Force.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://domanigroup.ai/">
+<meta property="og:image" content="https://domanigroup.ai/logo-full.png">
+<link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Public+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Domani Group","url":"https://domanigroup.ai","logo":"https://domanigroup.ai/logo-full.png","email":"info@domanigroup.ai","slogan":"Accelerating Mission Insight","description":"Federal data and analytics consultancy serving the U.S. Federal Government and Department of Defense."}
+</script>
+<script>document.documentElement.classList.add('js');</script>
+<style>
+  :root{
+    --maroon:#6B1836;
+    --maroon-deep:#4A0E24;
+    --maroon-bright:#88254A;
+    --maroon-tint:#F7EFF2;
+    --navy:#1E3D66;
+    --navy-deep:#12294A;
+    --bg:#FFFFFF;
+    --wash:#F6F7F9;
+    --ink:#171922;
+    --muted:#5B6272;
+    --line:rgba(23,25,34,.08);
+    --line-strong:rgba(23,25,34,.16);
+    --display:'Archivo',system-ui,sans-serif;
+    --body:'Public Sans',system-ui,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,'SFMono-Regular',monospace;
+    --radius:4px;
+    --container:1120px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  ::selection{background:rgba(107,24,54,.14)}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .container{max-width:var(--container);margin:0 auto;padding:0 24px}
+  .skip{position:absolute;left:-9999px;top:0;z-index:200;background:var(--maroon);color:#fff;padding:10px 18px;font-family:var(--mono);font-size:13px}
+  .skip:focus{left:16px;top:16px}
+  :focus-visible{outline:2px solid var(--maroon);outline-offset:3px;border-radius:2px}
+
+  /* ============ Chrome ============ */
+  .cred{background:var(--maroon-deep);color:rgba(255,255,255,.66);font-family:var(--mono);font-size:11px;letter-spacing:.1em}
+  .cred .container{display:flex;justify-content:space-between;align-items:center;height:36px}
+  .cred b{color:#fff;font-weight:500}
+
+  .nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);transition:box-shadow .3s}
+  .nav.scrolled{box-shadow:0 10px 30px -20px rgba(23,25,34,.35)}
+  .nav .container{display:flex;align-items:center;justify-content:space-between;height:74px;gap:24px}
+  .wordmark{display:flex;align-items:center;gap:12px}
+  .wordmark img{height:36px;width:auto}
+  .wordmark b{font-family:var(--display);font-weight:700;font-size:16px;letter-spacing:.13em;color:var(--maroon);white-space:nowrap}
+  .nav-links{display:flex;gap:32px;align-items:center}
+  .nav-links a{font-size:14.5px;font-weight:600;color:var(--muted);transition:color .2s}
+  .nav-links a:hover{color:var(--maroon)}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:600;font-size:15px;padding:13px 26px;border-radius:var(--radius);border:1px solid transparent;cursor:pointer;transition:background .2s,border-color .2s,color .2s,transform .2s;white-space:nowrap}
+  .btn-solid{background:var(--maroon);color:#fff}
+  .btn-solid:hover{background:var(--maroon-bright);transform:translateY(-1px)}
+  .btn-ghost{border-color:var(--line-strong);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--maroon);color:var(--maroon)}
+  .btn-light{background:#fff;color:var(--maroon)}
+  .btn-light:hover{background:var(--maroon-tint);transform:translateY(-1px)}
+  .btn-sm{padding:10px 20px;font-size:14px}
+
+  .burger{display:none;background:none;border:1px solid var(--line-strong);border-radius:var(--radius);width:42px;height:42px;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+  .burger span{display:block;width:18px;height:2px;background:var(--ink);transition:transform .25s,opacity .25s}
+  .menu-open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-open .burger span:nth-child(2){opacity:0}
+  .menu-open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .mobile-menu{display:none;position:fixed;inset:0;z-index:99;background:var(--bg);padding:120px 24px 40px;flex-direction:column;gap:8px}
+  .menu-open .mobile-menu{display:flex}
+  .mobile-menu a{font-family:var(--display);font-size:26px;font-weight:700;padding:14px 0;border-bottom:1px solid var(--line)}
+  .mobile-menu .btn{margin-top:28px}
+  .menu-open{overflow:hidden}
+
+  /* ============ Type patterns ============ */
+  .eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--maroon)}
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--maroon)}
+  .section{padding:100px 0}
+  .section-head{max-width:640px;margin-bottom:56px}
+  h2.title{font-family:var(--display);font-weight:700;font-size:clamp(1.85rem,3.2vw,2.4rem);line-height:1.15;letter-spacing:-.02em;margin-top:18px}
+  .section-head p{color:var(--muted);margin-top:14px}
+
+  /* ============ Hero ============ */
+  .hero{position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;opacity:.5;-webkit-mask-image:radial-gradient(110% 90% at 72% 4%,#000 20%,transparent 70%);mask-image:radial-gradient(110% 90% at 72% 4%,#000 20%,transparent 70%)}
+  .hero .container{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center;padding-top:84px;padding-bottom:96px}
+  .flag{display:inline-flex;align-items:center;gap:11px;background:var(--bg);border:1px solid var(--line-strong);border-radius:100px;padding:7px 15px 7px 8px;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--muted);margin-bottom:28px;transition:border-color .2s,color .2s}
+  .flag .pill{background:var(--maroon);color:#fff;border-radius:100px;padding:3px 10px;font-size:9.5px;letter-spacing:.16em}
+  .flag b{color:var(--ink);font-weight:500}
+  .flag .arrow{transition:transform .2s}
+  .flag:hover{border-color:var(--maroon);color:var(--maroon)}
+  .flag:hover .arrow{transform:translateX(3px)}
+  .hero h1{font-family:var(--display);font-weight:700;font-size:clamp(2.6rem,5.4vw,4.15rem);line-height:1.04;letter-spacing:-.03em;margin:0 0 22px}
+  .hero h1 .dot{color:var(--maroon)}
+  .hero .lede{color:var(--muted);font-size:18px;max-width:500px}
+  .hero .lede strong{color:var(--ink);font-weight:600}
+  .hero-ctas{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+
+  /* ============ Panel ============ */
+  .panel{background:var(--bg);border:1px solid var(--line-strong);border-top:3px solid var(--maroon);border-radius:var(--radius);box-shadow:0 30px 60px -34px rgba(23,25,34,.35)}
+  .panel-head{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:13px 18px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--muted)}
+  .panel-head .live{display:flex;align-items:center;gap:9px;color:var(--maroon)}
+  .live-dot{width:7px;height:7px;border-radius:50%;background:var(--maroon);box-shadow:0 0 0 0 rgba(107,24,54,.5);animation:pulse 2.2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(107,24,54,.4)}70%{box-shadow:0 0 0 9px rgba(107,24,54,0)}100%{box-shadow:0 0 0 0 rgba(107,24,54,0)}}
+  .panel-chart{padding:20px 14px 12px}
+  .panel-chart svg{width:100%;height:auto;display:block}
+  .chart-grid line{stroke:var(--line);stroke-width:1}
+  .chart-axis text{font-family:var(--mono);font-size:9px;fill:var(--muted);letter-spacing:.08em}
+  .chart-plan{fill:none;stroke:var(--navy);stroke-width:1.5;stroke-dasharray:5 6;opacity:.8}
+  .chart-plan-label{font-family:var(--mono);font-size:8.5px;fill:var(--navy);letter-spacing:.14em}
+  .chart-exec{fill:none;stroke:var(--maroon);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+  .chart-fill{fill:url(#execgrad)}
+  .chart-today{stroke:rgba(107,24,54,.35);stroke-width:1;stroke-dasharray:2 4}
+  .chart-today-label{font-family:var(--mono);font-size:8.5px;fill:var(--maroon);letter-spacing:.12em}
+  .chart-endpoint{fill:var(--maroon)}
+  .chart-endlabel{font-family:var(--mono);font-size:10px;fill:var(--maroon);font-weight:500}
+  .panel-stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+  .panel-stats div{padding:13px 18px;border-right:1px solid var(--line);font-family:var(--mono)}
+  .panel-stats div:last-child{border-right:none}
+  .panel-stats small{display:block;font-size:9.5px;letter-spacing:.14em;color:var(--muted);margin-bottom:4px}
+  .panel-stats strong{font-size:14.5px;font-weight:500;color:var(--ink)}
+
+  /* ============ Proof ============ */
+  .proof{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:30px 0}
+  .proof .container{display:flex;flex-wrap:wrap;align-items:baseline;gap:14px 40px}
+  .proof-label{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;flex:none}
+  .proof-names{display:flex;flex-wrap:wrap;gap:10px 28px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--ink);text-transform:uppercase}
+  .proof-names span{opacity:.8}
+  .proof-names .first{color:var(--maroon);opacity:1;font-weight:500}
+
+  /* ============ Capabilities ============ */
+  .cap-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .card{position:relative;overflow:hidden;display:flex;flex-direction:column;background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:30px;transition:border-color .25s,transform .25s,box-shadow .25s}
+  .card::before{content:"";position:absolute;top:0;left:0;height:2px;width:100%;background:var(--maroon);transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.5,0,.2,1)}
+  .card:hover{border-color:var(--line-strong);transform:translateY(-3px);box-shadow:0 24px 50px -34px rgba(23,25,34,.3)}
+  .card:hover::before{transform:scaleX(1)}
+  .chip{width:44px;height:44px;border-radius:var(--radius);background:var(--maroon-tint);color:var(--maroon);display:grid;place-items:center;margin-bottom:20px}
+  .card h3{font-family:var(--display);font-weight:600;font-size:20px;letter-spacing:-.015em;margin-bottom:10px}
+  .card p{color:var(--muted);font-size:15.5px}
+  .card-tags{margin-top:auto;padding-top:20px;font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--muted)}
+  .card-tags::before{content:"";display:block;width:100%;height:1px;background:var(--line);margin-bottom:14px}
+
+  /* ============ Approach ============ */
+  .approach{background:var(--wash);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .approach-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+  .checklist{list-style:none;margin-top:34px}
+  .checklist li{display:flex;gap:15px;padding:15px 0;border-bottom:1px solid var(--line-strong);font-size:15.5px}
+  .checklist li:first-child{border-top:1px solid var(--line-strong)}
+  .checklist .ck{flex:none;width:18px;height:18px;margin-top:3px;color:var(--maroon)}
+  .lane-label{margin-bottom:34px}
+  .timeline{position:relative;padding-left:34px}
+  .timeline::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:1px;background:var(--line-strong)}
+  .step{position:relative;padding:0 0 40px}
+  .step:last-child{padding-bottom:0}
+  .step::before{content:"";position:absolute;left:-32px;top:6px;width:13px;height:13px;border-radius:50%;background:var(--wash);border:2px solid var(--maroon)}
+  .step-meta{display:flex;gap:16px;align-items:baseline;font-family:var(--mono);font-size:11px;letter-spacing:.18em}
+  .step-meta .num{color:var(--maroon)}
+  .step-meta .wk{color:var(--muted)}
+  .step h4{font-family:var(--display);font-weight:600;font-size:18px;margin:8px 0 7px;letter-spacing:-.01em}
+  .step p{color:var(--muted);font-size:15.5px;max-width:430px}
+
+  /* ============ Flagship ============ */
+  .flagship{position:relative;overflow:hidden;border-radius:var(--radius);color:#fff;background:linear-gradient(130deg,var(--navy-deep),var(--navy) 80%);padding:46px 48px;margin-bottom:20px}
+  .flagship::after{content:"";position:absolute;top:-140px;right:-120px;width:440px;height:440px;background:radial-gradient(circle,rgba(136,37,74,.38),transparent 62%);pointer-events:none}
+  .flagship-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.35fr 1fr;gap:56px;align-items:center}
+  .fs-eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#DFB4C4}
+  .fs-eyebrow .pill{background:var(--maroon);color:#fff;border-radius:100px;padding:3px 10px;font-size:9.5px;letter-spacing:.16em}
+  .flagship h3{font-family:var(--display);font-weight:700;font-size:clamp(1.5rem,2.6vw,1.95rem);line-height:1.12;letter-spacing:-.02em;margin-top:16px}
+  .flagship h3 em{font-style:normal;color:#DFB4C4}
+  .flagship .fs-body{color:rgba(255,255,255,.82);font-size:15.5px;margin-top:14px;max-width:540px}
+  .fs-spec{border-top:1px solid rgba(255,255,255,.16)}
+  .fs-spec div{display:grid;grid-template-columns:96px 1fr;gap:18px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.16);align-items:baseline}
+  .fs-spec dt{font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:rgba(255,255,255,.55)}
+  .fs-spec dd{font-size:14.5px;font-weight:600}
+
+  /* ============ Past performance ============ */
+  .perf-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .perf{background:var(--bg);border:1px solid var(--line);border-left:2px solid var(--maroon);border-radius:var(--radius);padding:28px 30px;transition:border-color .25s,transform .25s,box-shadow .25s}
+  .perf:hover{border-left-color:var(--maroon-bright);transform:translateY(-3px);box-shadow:0 24px 50px -36px rgba(23,25,34,.3)}
+  .perf-tag{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--maroon);text-transform:uppercase}
+  .perf h3{font-family:var(--display);font-weight:600;font-size:19px;margin:11px 0 9px;letter-spacing:-.015em}
+  .perf p{color:var(--muted);font-size:15.5px}
+  .readiness{margin-top:52px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(90deg,var(--maroon-tint),var(--bg) 55%);display:grid;grid-template-columns:1fr 1fr;gap:32px;padding:36px 40px;align-items:center}
+  .readiness h3{font-family:var(--display);font-weight:700;font-size:clamp(1.25rem,2.1vw,1.55rem);letter-spacing:-.02em;line-height:1.3}
+  .readiness h3 b{color:var(--maroon)}
+  .readiness .r-note{color:var(--muted);font-size:15.5px}
+  .readiness .eyebrow{margin-bottom:12px}
+
+  /* ============ Leadership ============ */
+  .lead{border-top:1px solid var(--line)}
+  .lead-grid{display:grid;grid-template-columns:360px 1fr;gap:64px;align-items:start}
+  .lead-photo{position:relative;border:1px solid var(--line-strong);border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5;background:var(--wash)}
+  .lead-photo img{width:100%;height:100%;object-fit:cover}
+  .lead-photo .fallback{display:none;position:absolute;inset:0;align-items:center;justify-content:center;font-family:var(--display);font-size:60px;font-weight:700;color:var(--maroon);letter-spacing:.06em}
+  .lead-photo.noimg .fallback{display:flex}
+  .lead-name{font-family:var(--display);font-weight:700;font-size:24px;letter-spacing:-.02em;margin-top:20px}
+  .lead-title{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--maroon);text-transform:uppercase;margin-top:6px}
+  .lead-bio .eyebrow{margin-bottom:24px}
+  .lead-bio p{color:var(--muted);margin-bottom:17px;font-size:16px}
+  .lead-bio p strong{color:var(--ink);font-weight:600}
+
+  /* ============ Contact ============ */
+  .contact{position:relative;overflow:hidden;text-align:center;padding:120px 0;background:linear-gradient(135deg,var(--maroon-deep),var(--maroon) 92%);color:#fff}
+  .contact::before{content:"";position:absolute;top:50%;right:-140px;width:480px;height:480px;transform:translateY(-50%);background:url('logo-mark-white.png') center/contain no-repeat;opacity:.06;pointer-events:none}
+  .contact .container{position:relative;z-index:1}
+  .contact .eyebrow{justify-content:center;color:#DFB4C4}
+  .contact .eyebrow::before{background:#DFB4C4}
+  .contact .eyebrow::after{content:"";width:26px;height:1px;background:#DFB4C4}
+  .contact h2{font-family:var(--display);font-weight:700;font-size:clamp(2rem,4.2vw,3.1rem);letter-spacing:-.025em;line-height:1.1;margin:20px auto 18px;max-width:740px}
+  .contact .sub{color:rgba(255,255,255,.82);max-width:580px;margin:0 auto;font-size:17px}
+  .contact-ctas{margin-top:38px}
+  .contact-mail{display:inline-block;margin-top:24px;font-family:var(--mono);font-size:13px;letter-spacing:.08em;color:rgba(255,255,255,.75);border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:3px;transition:color .2s,border-color .2s}
+  .contact-mail:hover{color:#fff;border-color:#fff}
+
+  /* ============ Footer ============ */
+  footer{padding:60px 0 36px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;padding-bottom:44px;border-bottom:1px solid var(--line)}
+  .foot-brand img{width:150px;height:auto}
+  .foot-brand p{color:var(--muted);font-size:14.5px;margin-top:20px;max-width:320px}
+  .foot-col h5{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;margin-bottom:16px;font-weight:500}
+  .foot-col a{display:block;font-size:15px;padding:5px 0;transition:color .2s}
+  .foot-col a:hover{color:var(--maroon)}
+  .foot-col .mono{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;color:var(--muted);margin-top:14px}
+  .foot-bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:26px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;color:var(--muted)}
+
+  /* ============ Motion ============ */
+  html.js .reveal{opacity:0;transform:translateY(14px);transition:opacity .65s ease,transform .65s ease}
+  html.js .reveal.in{opacity:1;transform:none}
+  html.js .chart-exec{transition:stroke-dashoffset 1.6s cubic-bezier(.5,0,.2,1)}
+  html.js .panel .chart-plan,html.js .panel .chart-fill,html.js .panel .chart-plan-label{opacity:0;transition:opacity .9s ease .3s}
+  html.js .panel.drawn .chart-plan{opacity:.8}
+  html.js .panel.drawn .chart-fill,html.js .panel.drawn .chart-plan-label{opacity:1}
+  html.js .panel .chart-endpoint,html.js .panel .chart-endlabel{opacity:0;transition:opacity .5s ease 1.7s}
+  html.js .panel.drawn .chart-endpoint,html.js .panel.drawn .chart-endlabel{opacity:1}
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    html.js .reveal{opacity:1;transform:none;transition:none}
+    html.js .chart-exec{transition:none}
+    html.js .panel .chart-plan{opacity:.8;transition:none}
+    html.js .panel .chart-fill,html.js .panel .chart-plan-label,
+    html.js .panel .chart-endpoint,html.js .panel .chart-endlabel{opacity:1;transition:none}
+    .live-dot{animation:none}
+    .btn,.card,.perf,.flag{transition:none}
+  }
+
+  /* ============ Responsive ============ */
+  @media (max-width:1000px){
+    .hero .container{grid-template-columns:1fr;gap:52px;padding-top:60px;padding-bottom:72px}
+    .approach-grid{grid-template-columns:1fr;gap:56px}
+    .flagship-inner{grid-template-columns:1fr;gap:32px}
+    .lead-grid{grid-template-columns:1fr;gap:40px}
+    .lead-photo{max-width:360px}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:760px){
+    .section{padding:72px 0}
+    .nav-links,.btn-nav{display:none}
+    .burger{display:flex}
+    .cap-grid,.perf-grid{grid-template-columns:1fr}
+    .flagship{padding:32px 26px}
+    .readiness{grid-template-columns:1fr;padding:28px 26px}
+    .panel-stats{grid-template-columns:1fr 1fr}
+    .panel-stats div:nth-child(2){border-right:none}
+    .panel-stats div:nth-child(3){border-top:1px solid var(--line);grid-column:1/-1}
+    .cred .container{justify-content:center}
+    .cred-left{display:none}
+    .foot-grid{grid-template-columns:1fr;gap:36px}
+    .contact{padding:92px 0}
+    .contact::before{display:none}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="check" viewBox="0 0 24 24"><path d="M4 12.5 L9.5 18 L20 6.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<div class="cred">
+  <div class="container">
+    <span class="cred-left">DOMANI GROUP LLC</span>
+    <span>CAGE <b>07B65</b>&nbsp;&nbsp;·&nbsp;&nbsp;UEI <b>ELPXG3MZPMG3</b>&nbsp;&nbsp;·&nbsp;&nbsp;100% CLEARED U.S. TEAM</span>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="container">
+    <a href="#top" class="wordmark" aria-label="Domani Group home">
+      <img src="logo-mark.png" alt="" width="240" height="133">
+      <b>DOMANI GROUP</b>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#capabilities">Capabilities</a>
+      <a href="#approach">Approach</a>
+      <a href="#performance">Past Performance</a>
+      <a href="#leadership">Leadership</a>
+    </nav>
+    <a class="btn btn-solid btn-sm btn-nav" href="mailto:info@domanigroup.ai?subject=Discovery%20Call%20with%20Domani%20Group">Schedule a discovery call</a>
+    <button class="burger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-menu">
+  <a href="#capabilities">Capabilities</a>
+  <a href="#approach">Approach</a>
+  <a href="#performance">Past Performance</a>
+  <a href="#leadership">Leadership</a>
+  <a href="#contact">Contact</a>
+  <a class="btn btn-solid" href="mailto:info@domanigroup.ai?subject=Discovery%20Call%20with%20Domani%20Group">Schedule a discovery call</a>
+</div>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="container">
+      <div>
+        <a class="flag" href="#performance">
+          <span class="pill">NEW</span>
+          <span><b>CLEAR</b> — civilian pay analytics for the entire Air Force</span>
+          <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <h1>Accelerating<br>Mission Insight<span class="dot">.</span></h1>
+        <p class="lede">We turn fragmented federal data into secure, audit-ready insight that supports PPBE, oversight, and day-to-day mission decisions — <strong>in weeks, not years.</strong></p>
+        <div class="hero-ctas">
+          <a class="btn btn-solid" href="mailto:info@domanigroup.ai?subject=Discovery%20Call%20with%20Domani%20Group">Schedule a discovery call</a>
+          <a class="btn btn-ghost" href="#performance">View past performance</a>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-head">
+          <span class="live"><span class="live-dot"></span>CLEAR · CIVILIAN LABOR EXECUTION</span>
+          <span>FY26 · ILLUSTRATIVE</span>
+        </div>
+        <div class="panel-chart">
+          <svg viewBox="0 0 640 300" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Illustrative CLEAR readout: civilian pay execution tracking against plan across the fiscal year, currently 74.2 percent obligated">
+            <defs>
+              <linearGradient id="execgrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#6B1836" stop-opacity="0.14"/>
+                <stop offset="100%" stop-color="#6B1836" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <g class="chart-grid">
+              <line x1="40" y1="20" x2="620" y2="20"/>
+              <line x1="40" y1="80" x2="620" y2="80"/>
+              <line x1="40" y1="140" x2="620" y2="140"/>
+              <line x1="40" y1="200" x2="620" y2="200"/>
+              <line x1="40" y1="260" x2="620" y2="260"/>
+            </g>
+            <g class="chart-axis" text-anchor="middle">
+              <text x="40" y="282">OCT</text><text x="93" y="282">NOV</text>
+              <text x="145" y="282">DEC</text><text x="198" y="282">JAN</text>
+              <text x="251" y="282">FEB</text><text x="303" y="282">MAR</text>
+              <text x="356" y="282">APR</text><text x="409" y="282">MAY</text>
+              <text x="461" y="282">JUN</text><text x="514" y="282">JUL</text>
+              <text x="567" y="282">AUG</text><text x="620" y="282">SEP</text>
+            </g>
+            <g class="chart-axis" text-anchor="end">
+              <text x="34" y="24">100</text><text x="34" y="144">50</text><text x="34" y="264">0</text>
+            </g>
+            <path class="chart-fill" d="M40 250.4 L93 238.4 L145 221.6 L198 200 L251 180.8 L303 159.2 L356 137.6 L409 118.4 L461 99.2 L514 81.9 L514 260 L40 260 Z"/>
+            <line class="chart-today" x1="514" y1="20" x2="514" y2="260"/>
+            <text class="chart-today-label" x="520" y="32">FYTD</text>
+            <path class="chart-plan" d="M40 240 L620 20"/>
+            <text class="chart-plan-label" x="618" y="14" text-anchor="end">PLAN</text>
+            <path class="chart-exec" d="M40 250.4 L93 238.4 L145 221.6 L198 200 L251 180.8 L303 159.2 L356 137.6 L409 118.4 L461 99.2 L514 81.9"/>
+            <circle class="chart-endpoint" cx="514" cy="81.9" r="4.5"/>
+            <text class="chart-endlabel" x="524" y="78">74.2%</text>
+          </svg>
+        </div>
+        <div class="panel-stats">
+          <div><small>OBLIGATED</small><strong>74.2%</strong></div>
+          <div><small>VS PLAN</small><strong>−9.1 pts</strong></div>
+          <div><small>SCOPE</small><strong>Air Force–wide</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF -->
+  <section class="proof reveal">
+    <div class="container">
+      <span class="proof-label">Trusted across the Department of Defense</span>
+      <div class="proof-names">
+        <span class="first">SAF/FM · Secretary of the Air Force</span>
+        <span>Space Systems Command</span>
+        <span>Air Education &amp; Training Command</span>
+        <span>Joint Directed Energy Transition Office</span>
+        <span>Combatant Commands</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAPABILITIES -->
+  <section class="section" id="capabilities">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Capabilities</p>
+        <h2 class="title">What we deliver</h2>
+        <p>Four disciplines, one outcome: data your leaders can act on — and defend under audit and congressional scrutiny.</p>
+      </div>
+      <div class="cap-grid">
+        <article class="card reveal">
+          <span class="chip" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="6" r="2.2"/><circle cx="19" cy="6" r="2.2"/><circle cx="12" cy="18" r="2.2"/><path d="M6.6 7.6 L10.6 16.2 M17.4 7.6 L13.4 16.2 M7.2 6 H16.8"/></svg></span>
+          <h3>Data Engineering &amp; Integration</h3>
+          <p>We design and automate secure, compliant data pipelines that connect legacy systems, ERPs, and mission platforms into a single, auditable source of truth — ready for dashboards, AI, and oversight reviews.</p>
+          <span class="card-tags">PIPELINES · ERP · AUDIT TRAIL</span>
+        </article>
+        <article class="card reveal">
+          <span class="chip" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="1.8"/><circle cx="4.5" cy="12" r="1.8"/><circle cx="19.5" cy="12" r="1.8"/><circle cx="8" cy="19.5" r="1.8"/><circle cx="16" cy="19.5" r="1.8"/><path d="M10.8 5.6 L5.6 10.8 M13.2 5.6 L18.4 10.8 M5.4 13.6 L7.2 17.9 M18.6 13.6 L16.8 17.9 M9.8 19.5 H14.2"/></svg></span>
+          <h3>AI / Machine Learning</h3>
+          <p>We apply explainable AI and machine learning to federal data to detect risk, forecast outcomes, and support defensible, evidence-based decisions that stand up to audit and congressional scrutiny.</p>
+          <span class="card-tags">EXPLAINABLE · DEFENSIBLE</span>
+        </article>
+        <article class="card reveal">
+          <span class="chip" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="5" rx="1"/><rect x="13" y="10" width="8" height="11" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><path d="M5.5 18.5 L7 16.5 L9 17.5"/></svg></span>
+          <h3>Decision-Ready Dashboards</h3>
+          <p>We build role-based, CAC-enabled dashboards that surface mission-critical KPIs, drill-downs, and trends leaders need for real-time situational awareness, oversight, and rapid course-correction.</p>
+          <span class="card-tags">ROLE-BASED · CAC-ENABLED</span>
+        </article>
+        <article class="card reveal">
+          <span class="chip" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20 H21 M3 20 V4"/><path d="M3 16 L8 12 L12 14 L20 6"/><path d="M16.5 6 H20 V9.5"/></svg></span>
+          <h3>Cost &amp; Financial Modeling</h3>
+          <p>We develop transparent, auditable cost and financial models that quantify trade-offs, support PPBE and budget justification, and strengthen visible stewardship of taxpayer dollars.</p>
+          <span class="card-tags">PPBE · BUDGET JUSTIFICATION</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section class="section approach" id="approach">
+    <div class="container">
+      <div class="approach-grid">
+        <div class="reveal">
+          <p class="eyebrow">Why Domani</p>
+          <h2 class="title">The disrupter your mission needs</h2>
+          <ul class="checklist">
+            <li><svg class="ck" aria-hidden="true"><use href="#check"/></svg>Speed-to-solution that outpaces traditional Beltway contractors</li>
+            <li><svg class="ck" aria-hidden="true"><use href="#check"/></svg>Deep mission understanding from former uniformed and civilian financial leaders</li>
+            <li><svg class="ck" aria-hidden="true"><use href="#check"/></svg>100% U.S.-based, cleared American talent</li>
+            <li><svg class="ck" aria-hidden="true"><use href="#check"/></svg>Proven delivery on classified networks</li>
+            <li><svg class="ck" aria-hidden="true"><use href="#check"/></svg>Measured by mission outcomes, not level-of-effort hours</li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <p class="eyebrow lane-label">How an engagement runs</p>
+          <div class="timeline">
+            <div class="step">
+              <div class="step-meta"><span class="num">01</span><span class="wk">WEEK 1</span></div>
+              <h4>Discover</h4>
+              <p>A focused discovery sprint maps your data terrain, stakeholders, and the decision that matters most — then defines what "done" looks like.</p>
+            </div>
+            <div class="step">
+              <div class="step-meta"><span class="num">02</span><span class="wk">WEEKS 2–4</span></div>
+              <h4>Prove</h4>
+              <p>A working prototype on your real data — not slideware — in front of the decision-makers who will use it.</p>
+            </div>
+            <div class="step">
+              <div class="step-meta"><span class="num">03</span><span class="wk">WEEK 5+</span></div>
+              <h4>Deliver</h4>
+              <p>Hardened, documented, audit-ready delivery on your network, with your team trained to own and extend it.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAST PERFORMANCE -->
+  <section class="section" id="performance">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Past Performance</p>
+        <h2 class="title">Proven mission impact</h2>
+        <p>Delivered for commands where the stakes — and the scrutiny — are highest.</p>
+      </div>
+
+      <div class="flagship reveal">
+        <div class="flagship-inner">
+          <div>
+            <span class="fs-eyebrow"><span class="pill">FLAGSHIP</span> Latest delivery</span>
+            <h3>CLEAR — <em>Civilian Labor Execution Analytics &amp; Resourcing</em></h3>
+            <p class="fs-body">Built and delivered by Domani for SAF/FM, CLEAR unifies labor, funding, and execution data into one authoritative, audit-ready picture of civilian pay across the entire U.S. Air Force.</p>
+          </div>
+          <dl class="fs-spec">
+            <div><dt>CUSTOMER</dt><dd>Secretary of the Air Force — Financial Management (SAF/FM)</dd></div>
+            <div><dt>SCOPE</dt><dd>Entire U.S. Air Force</dd></div>
+            <div><dt>DOMAIN</dt><dd>Civilian pay execution &amp; resourcing</dd></div>
+            <div><dt>STATUS</dt><dd>Delivered · In operation</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="perf-grid">
+        <article class="perf reveal">
+          <span class="perf-tag">Civilian Pay Analytics</span>
+          <h3>Space Systems Command</h3>
+          <p>Developed advanced data analysis and forecasting models for the civilian pay program, improving visibility into execution and out-year requirements.</p>
+        </article>
+        <article class="perf reveal">
+          <span class="perf-tag">Status of Funds</span>
+          <h3>Air Education &amp; Training Command</h3>
+          <p>Architected enterprise Status-of-Funds dashboards used to brief a three-star MAJCOM commander on obligation and execution performance.</p>
+        </article>
+        <article class="perf reveal">
+          <span class="perf-tag">Data Integration</span>
+          <h3>Joint Directed Energy Transition Office</h3>
+          <p>Integrated workflow and general ledger data, creating a shared view that connected program managers and financial managers on cost, schedule, and performance.</p>
+        </article>
+        <article class="perf reveal">
+          <span class="perf-tag">Cost Modeling</span>
+          <h3>Joint Combatant Commands</h3>
+          <p>Built reusable cost models for multi-customer, multi-year programs, enabling consistent, defensible estimates across Combatant Commands and stakeholders.</p>
+        </article>
+      </div>
+
+      <div class="readiness reveal">
+        <div>
+          <p class="eyebrow">Readiness</p>
+          <h3><b>100% of core staff</b> hold active Secret or TS/SCI clearances.</h3>
+        </div>
+        <p class="r-note">Multiple agency-specific contract vehicles are available for rapid obligation — so your mission gets moving in days, not procurement cycles.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP -->
+  <section class="section lead" id="leadership">
+    <div class="container">
+      <div class="lead-grid">
+        <div class="reveal">
+          <div class="lead-photo" id="leadPhoto">
+            <img src="ceo-photo.jpg" alt="Joseph Sysko, Founder and CEO of Domani Group" loading="lazy" onerror="document.getElementById('leadPhoto').classList.add('noimg');this.remove();">
+            <span class="fallback" aria-hidden="true">JS</span>
+          </div>
+          <h3 class="lead-name">Joseph Sysko</h3>
+          <p class="lead-title">Founder &amp; Chief Executive Officer</p>
+        </div>
+        <div class="lead-bio reveal">
+          <p class="eyebrow">Leadership</p>
+          <p>Joseph Sysko founded Domani Group to turn complex federal data into decisive mission and business advantages. A results-oriented leader with a blend of <strong>military precision and private-sector agility</strong>, he specializes in data analytics, business intelligence, digital transformation, and decision-support systems for government clients.</p>
+          <p>His career spans high-stakes financial management and advanced analytics for the <strong>U.S. Air Force</strong> and the <strong>National Guard Bureau</strong> — overseeing multi-billion-dollar portfolios — alongside top-tier consulting engagements supporting senior leaders. Throughout, he has built and led cross-functional teams that deliver mission-critical insights, streamline operations, and drive measurable, documented outcomes.</p>
+          <p>At Domani Group, Joe remains hands-on — partnering with executives, operators, and analysts to harness the full power of their data, enabling smarter decisions, greater efficiency, and a durable competitive edge.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container reveal">
+      <p class="eyebrow">Contact</p>
+      <h2>Let's tackle your hardest data problem.</h2>
+      <p class="sub">Whether you're a federal requirement owner or an industry partner looking to team, we build secure, compliant data solutions that move at the speed of mission.</p>
+      <div class="contact-ctas">
+        <a class="btn btn-light" href="mailto:info@domanigroup.ai?subject=Discovery%20Call%20with%20Domani%20Group">Schedule a discovery call</a>
+      </div>
+      <br>
+      <a class="contact-mail" href="mailto:info@domanigroup.ai">info@domanigroup.ai</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="logo-full.png" alt="Domani Group" width="340" height="304" loading="lazy">
+        <p>Mission-focused data and analytics for federal decision-makers. Secure, audit-ready, and built at the speed of mission.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Navigate</h5>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#approach">Approach</a>
+        <a href="#performance">Past Performance</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h5>Company</h5>
+        <a href="mailto:info@domanigroup.ai">info@domanigroup.ai</a>
+        <p class="mono">CAGE 07B65<br>UEI ELPXG3MZPMG3</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> DOMANI GROUP. ALL RIGHTS RESERVED.</span>
+      <span>SERVING THE FEDERAL MISSION</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  var burger = document.querySelector('.burger'), body = document.body;
+  burger.addEventListener('click', function(){
+    var open = body.classList.toggle('menu-open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  document.querySelectorAll('.mobile-menu a').forEach(function(a){
+    a.addEventListener('click', function(){ body.classList.remove('menu-open'); burger.setAttribute('aria-expanded','false'); });
+  });
+
+  var nav = document.querySelector('.nav');
+  window.addEventListener('scroll', function(){ nav.classList.toggle('scrolled', window.scrollY > 8); }, {passive:true});
+
+  var panel = document.querySelector('.panel');
+  var exec = document.querySelector('.chart-exec');
+  var execLen = exec.getTotalLength();
+  if (!reduce){ exec.style.strokeDasharray = execLen; exec.style.strokeDashoffset = execLen; }
+  function drawChart(){ panel.classList.add('drawn'); exec.style.strokeDashoffset = '0'; }
+
+  var revealed = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:.14});
+    revealed.forEach(function(el){ io.observe(el); });
+    var chartIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting){ setTimeout(drawChart, 300); chartIO.unobserve(e.target); } });
+    }, {threshold:.3});
+    chartIO.observe(panel);
+  } else {
+    revealed.forEach(function(el){ el.classList.add('in'); });
+    exec.style.strokeDashoffset = '0'; panel.classList.add('drawn');
+  }
+})();
+</script>
+</body>
+</html>
